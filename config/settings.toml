@@ -1,0 +1,16 @@
+[default]
+name = ""
+DATABASE_URL = "sqlite:///example.db"
+DATABASE_URL_AIO = "sqlite+aiosqlite:///example.db"
+
+[development]
+name = "developer"
+DATABASE_URL = "sqlite:///example.db"
+DATABASE_URL_AIO = "sqlite+aiosqlite:///example.db"
+
+[production]
+name = "admin"
+DATABASE_URL = "sqlite:///example.db"
+DATABASE_URL_AIO = "sqlite+aiosqlite:///example.db"
+
+
