@@ -18,7 +18,7 @@ Requires-Dist: fastapi==0.99.1
 Requires-Dist: setuptools>=68.2.2
 Requires-Dist: httpx>=0.25.0
 Requires-Dist: dynaconf>=3.2.3
-Requires-Dist: fastapi-hive==1.0.21
+Requires-Dist: fastapi-hive==1.0.24
 Requires-Dist: joblib>=1.3.2
 
 # fastapi-project-base

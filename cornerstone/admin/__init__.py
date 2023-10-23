@@ -1,6 +1,6 @@
 
 from fastapi import FastAPI
-from fastapi_hive.ioc_framework.cornerstone_model import CornerstoneHooks, CornerstoneAsyncHooks
+from fastapi_hive.ioc_framework.cornerstone_hooks import CornerstoneHooks, CornerstoneAsyncHooks
 from cornerstone.admin.implement import create_admin_container
 
 __all__ = ['admin', 'CornerstoneHooksImpl', 'CornerstoneAsyncHooksImpl']
@@ -11,8 +11,8 @@ admin = None
 
 class CornerstoneHooksImpl(CornerstoneHooks):
 
-    def __init__(self, app: FastAPI):
-        super(CornerstoneHooksImpl, self).__init__(app)
+    def __init__(self):
+        super(CornerstoneHooksImpl, self).__init__()
 
     def pre_endpoint_setup(self):
         print("call pre setup from cornerstone!!!")
@@ -23,7 +23,7 @@ class CornerstoneHooksImpl(CornerstoneHooks):
         # print("+++++++++++++++++++2222")
         # print(globals())
 
-        globals()['admin'] = create_admin_container(self._app)
+        globals()['admin'] = create_admin_container(self.app)
 
     def post_endpoint_setup(self):
         print("call post setup from cornerstone!!!")
@@ -40,8 +40,8 @@ class CornerstoneHooksImpl(CornerstoneHooks):
 
 class CornerstoneAsyncHooksImpl(CornerstoneAsyncHooks):
 
-    def __init__(self, app: FastAPI):
-        super(CornerstoneAsyncHooksImpl, self).__init__(app)
+    def __init__(self):
+        super(CornerstoneAsyncHooksImpl, self).__init__()
 
     async def pre_endpoint_setup(self):
         print("call pre setup from cornerstone async!!!")

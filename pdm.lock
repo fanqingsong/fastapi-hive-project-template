@@ -6,7 +6,7 @@ groups = ["default"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:8904dcb9b5d9e6bce3de2646a3ca3bfe2109a0fb74b5dfa1900dda9a55b394d5"
+content_hash = "sha256:b065f17412ea0de6c935407190087ba3cca49bbf3c51b3b9533dea9f071a4560"
 
 [[package]]
 name = "aiofiles"
@@ -351,7 +351,7 @@ files = [
 
 [[package]]
 name = "fastapi-hive"
-version = "1.0.21"
+version = "1.0.24"
 requires_python = ">=3.7"
 summary = "framework for FastAPI cornerstones management"
 dependencies = [
@@ -360,7 +360,7 @@ dependencies = [
     "loguru>=0.4.1",
 ]
 files = [
-    {file = "fastapi_hive-1.0.21.tar.gz", hash = "sha256:62b9eabc53457635c212afb4e8ec907a3dc12051f5cc9a72f1b9b05413b23d7f"},
+    {file = "fastapi_hive-1.0.24.tar.gz", hash = "sha256:205df3a635f0db70db08e314514637f7b3c3678e6177287b7fcabe7a1a9ffe7d"},
 ]
 
 [[package]]

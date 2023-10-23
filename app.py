@@ -16,8 +16,8 @@ ioc_framework.config.ENDPOINT_PACKAGE_PATHS = ["./endpoints"]
 # logger.info("-----------------------------------------------------")
 # logger.info(dir(ioc_framework))
 # logger.info(dir(ioc_framework.config))
-ioc_framework.config.HIDE_PACKAGE_IN_URL = True
-ioc_framework.config.HIDE_MODULE_IN_URL = False
+ioc_framework.config.HIDE_ENDPOINT_CONTAINER_IN_API = True
+ioc_framework.config.HIDE_ENDPOINT_IN_API = False
 
 
 def pre_setup():

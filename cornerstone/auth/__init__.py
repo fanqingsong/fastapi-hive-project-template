@@ -2,7 +2,7 @@
 from cornerstone.auth.db import create_db_and_tables
 from cornerstone.auth.router import register_auth_router
 from fastapi import FastAPI
-from fastapi_hive.ioc_framework.cornerstone_model import CornerstoneHooks, CornerstoneAsyncHooks
+from fastapi_hive.ioc_framework.cornerstone_hooks import CornerstoneHooks, CornerstoneAsyncHooks
 
 
 __all__ = ['CornerstoneHooksImpl', 'CornerstoneAsyncHooksImpl']
@@ -10,8 +10,8 @@ __all__ = ['CornerstoneHooksImpl', 'CornerstoneAsyncHooksImpl']
 
 class CornerstoneHooksImpl(CornerstoneHooks):
 
-    def __init__(self, app: FastAPI):
-        super(CornerstoneHooksImpl, self).__init__(app)
+    def __init__(self):
+        super(CornerstoneHooksImpl, self).__init__()
 
     def pre_endpoint_setup(self):
         print("call pre setup from cornerstone!!!")
@@ -19,7 +19,7 @@ class CornerstoneHooksImpl(CornerstoneHooks):
     def post_endpoint_setup(self):
         print("call post setup from cornerstone!!!")
 
-        register_auth_router(self._app)
+        register_auth_router(self.app)
 
     def pre_endpoint_teardown(self):
         print("call pre teardown from cornerstone!!!")
@@ -30,8 +30,8 @@ class CornerstoneHooksImpl(CornerstoneHooks):
 
 class CornerstoneAsyncHooksImpl(CornerstoneAsyncHooks):
 
-    def __init__(self, app: FastAPI):
-        super(CornerstoneAsyncHooksImpl, self).__init__(app)
+    def __init__(self):
+        super(CornerstoneAsyncHooksImpl, self).__init__()
 
     async def pre_endpoint_setup(self):
         print("call pre setup from cornerstone async!!!")

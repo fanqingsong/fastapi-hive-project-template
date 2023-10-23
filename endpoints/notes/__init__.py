@@ -1,13 +1,13 @@
 
 from fastapi import FastAPI
-from fastapi_hive.ioc_framework.endpoint_model import EndpointHooks, EndpointAsyncHooks
+from fastapi_hive.ioc_framework.endpoint_hooks import EndpointHooks, EndpointAsyncHooks
 from endpoints.notes.db import add_to_admin
 
 
 class EndpointHooksImpl(EndpointHooks):
 
-    def __init__(self, app: FastAPI):
-        super(EndpointHooksImpl, self).__init__(app)
+    def __init__(self):
+        super(EndpointHooksImpl, self).__init__()
 
     def setup(self):
         print("call pre setup from EndpointImpl!!!")
@@ -22,8 +22,8 @@ class EndpointHooksImpl(EndpointHooks):
 
 class EndpointAsyncHooksImpl(EndpointAsyncHooks):
 
-    def __init__(self, app: FastAPI):
-        super(EndpointAsyncHooksImpl, self).__init__(app)
+    def __init__(self):
+        super(EndpointAsyncHooksImpl, self).__init__()
 
     async def setup(self):
         print("call pre setup from cornerstone EndpointAsyncImpl!!!")
